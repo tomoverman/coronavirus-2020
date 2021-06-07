@@ -21,3 +21,17 @@ def get_cases_chronologically(df):
     cases = np.array(cases)
     labels = np.array(labels)
     return cases, labels
+
+
+def get_cases_chronologically_st(df):
+    cases = []
+    labels = []
+    for i in range(df.shape[0]):
+        _cases = df.iloc[i, 11:]
+        _labels = df.iloc[i, :11]
+        cases.append(_cases)
+        labels.append(_labels)
+
+    cases = np.array(cases)
+    labels = np.array(labels)
+    return cases, labels
